@@ -2,6 +2,9 @@ function LlenarDetalles(){
     const tableBody = document.querySelector(".tbody-facdetalles");
     const formData = new FormData();
 
+    const clnombre = document.getElementById('clNombre')
+    const cldireccion = document.getElementById('clDireccion')
+
     const urlParams = new URLSearchParams(window.location.search);
     const facturaID = urlParams.get("facturaID");
 
@@ -21,6 +24,8 @@ function LlenarDetalles(){
     .then(data => {
         // Limpiar el contenido existente de la tabla
         console.log(data)
+        clnombre.innerHTML = data[0].Cliente;
+        cldireccion.innerHTML = data[0].Direccion;
         tableBody.innerHTML = `
             <tr>
                 <td>${data[0].Paquete}</td>

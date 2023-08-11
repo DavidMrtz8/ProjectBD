@@ -20,8 +20,8 @@
             <div class="row">
               <div class="col d-flex flex-column">
                 <span>Fecha de emision: 12 de agosto</span>
-                <span>Factura para: Cliente</span>
-                <span>Colocar direcion del cliente</span>
+                <span id="clNombre">Factura para: Cliente</span>
+                <span id="clDireccion">Colocar direcion del cliente</span>
               </div>
               <div class="col d-flex flex-column">
                 <span>Fecha de vencimiento: 12 de agosto</span>
