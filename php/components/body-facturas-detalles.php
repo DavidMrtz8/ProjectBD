@@ -15,7 +15,7 @@
           </div>
         </div>
         <div class="row mt-2">
-          <div class="col-8 px-5">
+          <div class="col-12 px-5">
             <span class="fs-6 fw-semibold">Factura #4</span>
             <div class="row">
               <div class="col d-flex flex-column">
@@ -26,7 +26,9 @@
               <div class="col d-flex flex-column">
                 <span>Fecha de vencimiento: 12 de agosto</span>
                 <span>Factura para: SAO INC</span>
-                <span>Colocar direcion fiticia de la empresa</span>
+                <span>Calle Principal, Barrio El Centro
+                San Pedro Sula, Cortés
+                Honduras</span>
               </div>
             </div>
           </div>
@@ -41,7 +43,7 @@
                   <th>Precio</th>
                 </tr>
               </thead>
-              <tbody>
+              <tbody class="tbody-facdetalles">
                 <tr>
                   <td>Paquete basico</td>
                   <td>199 Lps</td>
