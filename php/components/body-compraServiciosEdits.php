@@ -42,7 +42,7 @@
           </div>
           <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">Servicio</label>
-            <select class="form-select form-select-sm combo-opcion-paquete" aria-label=".form-select-sm example"
+            <select class="form-select form-select-sm combo-opcion-servicio" aria-label=".form-select-sm example"
               name="paquete">
               <option selected>Selecione una opcion</option>
             </select>
@@ -57,10 +57,8 @@
 
           <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">Estado del servicio</label>
-            <select class="form-select form-select-sm combo-estado-contrato" aria-label=".form-select-sm example">
+            <select class="form-select form-select-sm combo-estado-CompraServicio" aria-label=".form-select-sm example">
               <option selected>Selecione una opcion</option>
-              <option>En progreso</option>
-              <option>Finalizado listo para pago</option>
             </select>
           </div>
         </div>
@@ -69,7 +67,7 @@
             <button type="button" class="btn btn-secondary w-100" data-bs-dismiss="modal">Cancelar</button>
           </div>
           <div class="col">
-            <button type="submit" class="btn btn-primary w-100 btn-actualizar-contrato">Guardar</button>
+            <button type="submit" class="btn btn-primary w-100 btn-actualizar-CompraServicio">Guardar</button>
           </div>
         </div>
       </div>
@@ -148,7 +146,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-        <button type="submit" class="btn btn-primary enviar-form-Articulo">Finalizar</button>
+        <button type="submit" class="btn btn-primary enviar-form-CompraArticulo">Finalizar</button>
       </div>
     </div>
   </div>

@@ -64,74 +64,7 @@
                     <th scope="col">Accion</th>
                   </tr>
                 </thead>
-                <tbody class="tbody-estado-paquetes">
-                  <tr>
-                    <td class="py-3">1</td>
-                    <td class="py-3">Pedro Perez</td>
-                    <td class="py-3">Reparacion de computadoras</td>
-                    <td class="py-3">1200 Lps</td>
-                    <td class="py-3">Pendiente de pago</td>
-                    <td class="py-3">
-                      <a href="./compraServicioEdits.php" class="btn btn-warning btn-sm"><i class='bx bx-edit'></i></a>
-                      <button class="btn btn-danger btn-sm"><i class='bx bx-eraser'></i></button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="py-3">1</td>
-                    <td class="py-3">Pedro Perez</td>
-                    <td class="py-3">Reparacion de computadoras</td>
-                    <td class="py-3">1200 Lps</td>
-                    <td class="py-3">Pendiente de pago</td>
-                    <td class="py-3">
-                      <button class="btn btn-warning btn-sm"><i class='bx bx-edit'></i></button>
-                      <button class="btn btn-danger btn-sm"><i class='bx bx-eraser'></i></button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="py-3">1</td>
-                    <td class="py-3">Pedro Perez</td>
-                    <td class="py-3">Reparacion de computadoras</td>
-                    <td class="py-3">1200 Lps</td>
-                    <td class="py-3">Pendiente de pago</td>
-                    <td class="py-3">
-                      <button class="btn btn-warning btn-sm"><i class='bx bx-edit'></i></button>
-                      <button class="btn btn-danger btn-sm"><i class='bx bx-eraser'></i></button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="py-3">1</td>
-                    <td class="py-3">Pedro Perez</td>
-                    <td class="py-3">Reparacion de computadoras</td>
-                    <td class="py-3">1200 Lps</td>
-                    <td class="py-3">Pendiente de pago</td>
-                    <td class="py-3">
-                      <button class="btn btn-warning btn-sm"><i class='bx bx-edit'></i></button>
-                      <button class="btn btn-danger btn-sm"><i class='bx bx-eraser'></i></button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="py-3">1</td>
-                    <td class="py-3">Pedro Perez</td>
-                    <td class="py-3">Reparacion de computadoras</td>
-                    <td class="py-3">1200 Lps</td>
-                    <td class="py-3">Pendiente de pago</td>
-                    <td class="py-3">
-                      <button class="btn btn-warning btn-sm"><i class='bx bx-edit'></i></button>
-                      <button class="btn btn-danger btn-sm"><i class='bx bx-eraser'></i></button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="py-3">1</td>
-                    <td class="py-3">Pedro Perez</td>
-                    <td class="py-3">Reparacion de computadoras</td>
-                    <td class="py-3">1200 Lps</td>
-                    <td class="py-3">Pendiente de pago</td>
-                    <td class="py-3">
-                      <button class="btn btn-warning btn-sm"><i class='bx bx-edit'></i></button>
-                      <button class="btn btn-danger btn-sm"><i class='bx bx-eraser'></i></button>
-                    </td>
-                  </tr>
-
+                <tbody class="tbody-estado-CompraServicios">
                 </tbody>
               </table>
             </div>
@@ -169,7 +102,7 @@
         </div>
         <div class="mb-3">
           <label for="exampleFormControlInput1" class="form-label">Servicio</label>
-          <select class="form-select form-select-sm combo-opcion-paquete" aria-label=".form-select-sm example"
+          <select class="form-select form-select-sm combo-opcion-servicio" aria-label=".form-select-sm example"
             name="paquete">
             <option selected>Selecione una opcion</option>
           </select>
@@ -183,7 +116,7 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-          <button type="submit" class="btn btn-primary" id="enviar-formulario-paquetes">Finalizar</button>
+          <button type="submit" class="btn btn-primary" id="enviar-formulario-CompraServicios">Finalizar</button>
         </div>
       </div>
     </div>
