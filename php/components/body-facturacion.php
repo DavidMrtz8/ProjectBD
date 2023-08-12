@@ -1,6 +1,6 @@
 <div class="container">
   <?php
-      include('header.php');
+  include('header.php');
   ?>
   <div class="row mt-2">
     <div class="col-6 p-2">
@@ -108,18 +108,7 @@
                   <th scope="col" class="text-center">Accion</th>
                 </tr>
               </thead>
-              <tbody>
-                <tr>
-                  <td class="py-3">1</td>
-                  <td class="py-3">Ebay</td>
-                  <td class="py-3">Paquete basico</td>
-                  <td class="py-3">
-                    <span class="bg-success-subtle text-emphasis-success rounded px-1">Finalizado</span>
-                  </td>
-                  <td class="py-3 text-center">
-                    <a href="./facturas-detalles.php" class="btn btn-warning btn-sm"><i class='bx bx-send'></i></a>
-                  </td>
-                </tr>
+              <tbody class="tbody-servicios">
               </tbody>
             </table>
           </div>
