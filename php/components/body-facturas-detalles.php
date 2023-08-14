@@ -44,64 +44,6 @@
                 </tr>
               </thead>
               <tbody class="tbody-facdetalles">
-                <tr>
-                  <td>Paquete basico</td>
-                  <td>199 Lps</td>
-                  <td>1300 Lps</td>
-                </tr>
-                <tr>
-                  <td>Horas extra</td>
-                  <td>199 Lps</td>
-                  <td>1300 Lps</td>
-                </tr>
-                <tr data-toggle="collapse" data-target="#productosUsados" aria-expanded="false" aria-controls="productosUsados">
-                  <td>Productos usados</td>
-                  <td>120Lps</td>
-                  <td>1200Lps</td>
-                </tr>
-                <tr id="productosUsados" class="collapse">
-                  <td colspan="3">
-                    <table class="table table-borderless">
-                      <thead>
-                        <tr>
-                          <td scope="col" class="text-center">Articulo</td>
-                          <td scope="col" class="text-center">Cantidad</td>
-                          <td scope="col" class="text-center">ISV</td>
-                          <td scope="col" class="text-center">Costo unitario</td>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td class="text-center">Ram</td>
-                          <td class="text-center">2</td>
-                          <td class="text-center">15</td>
-                          <td class="text-center">100</td>
-                        </tr>
-                        <tr>
-                          <td class="text-center">Ram</td>
-                          <td class="text-center">2</td>
-                          <td class="text-center">15</td>
-                          <td class="text-center">100</td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </td>
-                </tr>
-                <tr>
-                  <td colspan="1"></td>
-                  <td>SubTotal:</td>
-                  <td>1200 Lps</td>
-                </tr>
-                <tr>
-                  <td colspan="1"></td>
-                  <td>ISV:</td>
-                  <td>120 Lps</td>
-                </tr>
-                <tr>
-                  <td colspan="1"  class="bg-warning-subtle"></td>
-                  <td class="bg-warning-subtle">Total:</td>
-                  <td class="bg-warning-subtle">1320 Lps</td>
-                </tr>
               </tbody>
             </table>
           </div>

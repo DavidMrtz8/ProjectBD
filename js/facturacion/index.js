@@ -82,19 +82,19 @@ function LlenarTablaServicios() {
           <td class="py-3">${item.Servicios}</td>
           <td class="py-3">${item.Estado == 0 ? "Pendiente" : "Pagado"}</td>
           <td class="py-3 text-center">
-            <a href="./facturas-detalles.php" class="btn btn-warning btn-sm ver-btn" data-id="${
+            <a href="./facturas-detalles.php" class="btn btn-warning btn-sm ver-btn2" data-id="${
               item.facturaID
             }"><i class='bx bx-send'></i></a>
           </td>
         `;
         tableBody.appendChild(row);
       });
-      const editButtons = document.querySelectorAll(".ver-btn");
+      const editButtons = document.querySelectorAll(".ver-btn2");
       editButtons.forEach(editButton => {
         editButton.addEventListener("click", event => {
           event.preventDefault();
-          const facturaID = editButton.getAttribute("data-id");
-          window.location.href = `./facturas-detalles.php?facturaID=${facturaID}`;
+          const compraID = editButton.getAttribute("data-id");
+          window.location.href = `./facturas-detalles.php?compraID=${compraID}`;
         });
       });
     })
