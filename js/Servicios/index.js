@@ -157,8 +157,10 @@ function enviarFormulario(formularioId, procedimiento) {
     .then(responseText => {
       if (formularioId == "form-Nuevo-Servicio") {
         LlenarTablaServicios();
+        CargarDatosTotales();
       } else if (formularioId == "form-Nuevo-Paquete") {
         LlenarTablaPaquetes();
+        CargarDatosTotales();
       }
     })
     .catch(error => {
@@ -355,10 +357,42 @@ function EliminarPaquete() {
   });
 }
 
+function CargarDatosTotales() {
+  const totalPaquetes = document.querySelector(".total-paquetes");
+  const contratosHechos = document.querySelector(".contratos-hechos");
+  const totalServicios = document.querySelector(".total-servicios");
+  const compraServicios = document.querySelector(".compra-servicios");
+
+  const formData = new FormData();
+  formData.append("procedimiento", "spMostrarTotalesPaquetes");
+
+  fetch("./php/server/Paquetes/apis_paquetes.php", {
+    method: "POST",
+    body: formData,
+  })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+      return response.json();
+    })
+    .then(data => {
+      console.log(data);
+      totalPaquetes.innerHTML = data[0].TotalPaquetes;
+      contratosHechos.innerHTML = data[0].TotalContratos;
+      totalServicios.innerHTML = data[0].TotalServicios;
+      compraServicios.innerHTML = data[0].TotalCompraServicios;
+    })
+    .catch(error => {
+      console.error("Fetch error:", error);
+    });
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   cargarComboBox();
   LlenarTablaServicios();
   LlenarTablaPaquetes();
   EliminarServicio();
   EliminarPaquete();
+  CargarDatosTotales();
 });

@@ -19,10 +19,10 @@ if ($requestData !== null) {
     $horario = $requestData->horario;
     $fechacon = $requestData->fechacon;
     $fechanac = $requestData->fechanac;
-  
+
     $resultado = $conexion->ejecutarProcedimientosAlmacenado($nombreProcedimiento, [$tecnicoID, $nombre, $apellido, $area, $salario, $horario, $fechacon, $fechanac]);
-  }  
-}else{
+  }
+} else {
   // Obtener el nombre del procedimiento almacenado a ejecutar
   $nombreProcedimiento = $_POST['procedimiento'];
 
@@ -173,7 +173,7 @@ if ($requestData !== null) {
     // Devuelve los datos JSON
     echo $jsonData;
   }
-  
+
   if (isset($_GET['getDataTecnico']) && $_GET['getDataTecnico'] === 'true') {
     $sql = "select * from vTecnicos";
     $result = $conexion->query($sql);
@@ -189,6 +189,25 @@ if ($requestData !== null) {
 
     // Devuelve los datos JSON
     echo $jsonData;
+  }
+
+  if ($nombreProcedimiento === "spMostrarTotalTecnicos") {
+    $resultado = $conexion->ejecutarProcedimientosAlmacenado($nombreProcedimiento);
+
+    // Obtener los resultados del objeto de declaración
+    $data = [];
+    while ($row = sqlsrv_fetch_array($resultado, SQLSRV_FETCH_ASSOC)) {
+      $data[] = $row;
+    }
+
+    // Convertir los resultados a formato JSON
+    $resultadoJSON = json_encode($data);
+
+    // Establecer encabezados para indicar que la respuesta es en formato JSON
+    header('Content-Type: application/json');
+
+    // Imprimir el resultado en formato JSON
+    echo $resultadoJSON;
   }
 }
 

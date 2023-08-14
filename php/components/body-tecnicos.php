@@ -10,21 +10,21 @@
             <h6 class="fs-5">
               <i class='bx bx-wrench'></i>
             </h6>
-            <span class="fw-bold mb-1">14</span>
+            <span class="fw-bold mb-1 total-tecnicos">14</span>
             <span class="subtitle-contratos">Total tecnicos</span>
           </div>
           <div class="col-3 d-flex justify-content-center align-items-center flex-column border-end">
             <h6 class="fs-5">
               <i class='bx bx-station text-success'></i>
             </h6>
-            <span class="fw-bold mb-1">14</span>
+            <span class="fw-bold mb-1 total-tecnicos-libres">14</span>
             <span class="subtitle-contratos">Tenicos libres</span>
           </div>
           <div class="col-3 d-flex justify-content-center align-items-center flex-column border-end">
             <h6 class="fs-5">
               <i class='bx bx-station text-danger'></i>
             </h6>
-            <span class="fw-bold mb-1">25</span>
+            <span class="fw-bold mb-1 total-tecnicos-ocupados">25</span>
             <span class="subtitle-contratos">Tecnicos ocupados</span>
           </div>
           <div class="col-3 d-flex justify-content-center align-items-center flex-column">

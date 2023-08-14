@@ -22,6 +22,7 @@ function enviarFormulario(formularioId, procedimiento) {
   xhttp.onreadystatechange = function () {
     if (this.readyState === 4 && this.status === 200) {
       LlenarTabla();
+      CargarDatosTotales();
     }
   };
   xhttp.open("POST", "./php/server/Tecnicos/apis_tecnicos.php", true);
@@ -144,13 +145,19 @@ function LlenarTabla() {
           <td class="py-3">${item.Nombre}</td>
           <td class="py-3">${item.Apellido}</td>
           <td class="py-3">
-            <span class="bg-warning-subtle text-emphasis-warning rounded px-1">${item.Estado === 0 ? 'Ocupado' : 'Libre'}</span>
+            <span class="bg-warning-subtle text-emphasis-warning rounded px-1">${
+              item.Estado === 0 ? "Ocupado" : "Libre"
+            }</span>
           </td>
           <td class="py-3">${item.Contratos}</td>
           <td class="py-3">${item.Servicios}</td>
           <td class="py-3">
-            <a href="#" class="btn btn-warning btn-sm editar-btn" data-id="${item.ID_tecnico}"><i class='bx bx-edit'></i></a>
-            <button class="btn btn-danger btn-sm eliminar-btn" onclick="eliminarTecnico(${item.ID_tecnico})"><i class="bx bx-eraser"></i></button>
+            <a href="#" class="btn btn-warning btn-sm editar-btn" data-id="${
+              item.ID_tecnico
+            }"><i class='bx bx-edit'></i></a>
+            <button class="btn btn-danger btn-sm eliminar-btn" onclick="eliminarTecnico(${
+              item.ID_tecnico
+            })"><i class="bx bx-eraser"></i></button>
           </td>
         `;
         } else {
@@ -161,13 +168,19 @@ function LlenarTabla() {
           <td class="py-3">${item.Nombre}</td>
           <td class="py-3">${item.Apellido}</td>
           <td class="py-3">
-            <span class="bg-warning-subtle text-emphasis-warning rounded px-1">${item.Estado === 0 ? 'Ocupado' : 'Libre'}</span>
+            <span class="bg-warning-subtle text-emphasis-warning rounded px-1">${
+              item.Estado === 0 ? "Ocupado" : "Libre"
+            }</span>
           </td>
           <td class="py-3">${item.Contratos}</td>
           <td class="py-3">${item.Servicios}</td>
           <td class="py-3">
-            <a href="#" class="btn btn-warning btn-sm editar-btn" data-id="${item.ID_tecnico}"><i class='bx bx-edit'></i></a>
-            <button class="btn btn-danger btn-sm eliminar-btn" onclick="eliminarTecnico(${item.ID_tecnico})"><i class="bx bx-eraser"></i></button>
+            <a href="#" class="btn btn-warning btn-sm editar-btn" data-id="${
+              item.ID_tecnico
+            }"><i class='bx bx-edit'></i></a>
+            <button class="btn btn-danger btn-sm eliminar-btn" onclick="eliminarTecnico(${
+              item.ID_tecnico
+            })"><i class="bx bx-eraser"></i></button>
           </td>
           `;
 
@@ -189,57 +202,85 @@ function LlenarTabla() {
 }
 
 function eliminarTecnico(ID) {
-      Swal.fire({
-        title: "¿Estás seguro?",
-        text: "Esta acción no se puede deshacer",
-        icon: "warning",
-        showCancelButton: true,
-        confirmButtonColor: "#d33",
-        cancelButtonColor: "#3085d6",
-        confirmButtonText: "Sí, eliminar",
-        cancelButtonText: "Cancelar",
-      }).then(result => {
-        if (result.isConfirmed) {
-          const formData = new FormData();
-          formData.append("procedimiento", "spEliminarTecnico");
-          formData.append("id", ID);
+  Swal.fire({
+    title: "¿Estás seguro?",
+    text: "Esta acción no se puede deshacer",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#d33",
+    cancelButtonColor: "#3085d6",
+    confirmButtonText: "Sí, eliminar",
+    cancelButtonText: "Cancelar",
+  }).then(result => {
+    if (result.isConfirmed) {
+      const formData = new FormData();
+      formData.append("procedimiento", "spEliminarTecnico");
+      formData.append("id", ID);
 
-          // Realizar la solicitud a PHP mediante Fetch API
-          fetch("./php/server/Tecnicos/apis_tecnicos.php", {
-            method: "POST",
-            body: formData,
-          })
-            .then(response => {
-              if (!response.ok) {
-                throw new Error("Network response was not ok");
-              }
-              return response.json();
-            })
-            .then(response => {
-              if (response.success) {
-                Swal.fire(
-                  "¡Eliminado!",
-                  "El contrato ha sido eliminado.",
-                  "success"
-                ).then(() => {
-                  // Actualizar la página o realizar las acciones necesarias
-                  location.reload();
-                });
-              } else {
-                Swal.fire("Error", "No se pudo eliminar el contrato.", "error");
-              }
-            })
-            .catch(error => {
-              console.error("Fetch error:", error);
+      // Realizar la solicitud a PHP mediante Fetch API
+      fetch("./php/server/Tecnicos/apis_tecnicos.php", {
+        method: "POST",
+        body: formData,
+      })
+        .then(response => {
+          if (!response.ok) {
+            throw new Error("Network response was not ok");
+          }
+          return response.json();
+        })
+        .then(response => {
+          if (response.success) {
+            Swal.fire(
+              "¡Eliminado!",
+              "El contrato ha sido eliminado.",
+              "success"
+            ).then(() => {
+              // Actualizar la página o realizar las acciones necesarias
+              location.reload();
             });
-        }
-      });
-    
-  
+          } else {
+            Swal.fire("Error", "No se pudo eliminar el contrato.", "error");
+          }
+        })
+        .catch(error => {
+          console.error("Fetch error:", error);
+        });
+    }
+  });
+}
+
+function CargarDatosTotales() {
+  const totalTecnicos = document.querySelector(".total-tecnicos");
+  const tecnicosLibres = document.querySelector(".total-tecnicos-libres");
+  const tecnicosOcupados = document.querySelector(".total-tecnicos-ocupados");
+
+  const formData = new FormData();
+  formData.append("procedimiento", "spMostrarTotalTecnicos");
+
+  fetch("./php/server/Tecnicos/apis_tecnicos.php", {
+    method: "POST",
+    body: formData,
+  })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+      return response.json();
+    })
+    .then(data => {
+      console.log(data);
+      totalTecnicos.innerHTML = data[0].TotalTecnicos;
+      tecnicosLibres.innerHTML = data[0].TotalTecnicosDisponibles;
+      tecnicosOcupados.innerHTML = data[0].TotalTecnicosOcupados;
+    })
+    .catch(error => {
+      console.error("Fetch error:", error);
+    });
 }
 
 document.addEventListener("DOMContentLoaded", () => {
   cargarComboBox();
   cargarComboBoxHorario();
   LlenarTabla();
+  CargarDatosTotales();
 });

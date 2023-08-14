@@ -25,7 +25,7 @@
             </span>
           </div>
           <div class="col-6 text-center">
-            <span class="fw-light">
+            <span class="fw-light total-paquetes">
               8
             </span>
           </div>
@@ -37,7 +37,7 @@
             </span>
           </div>
           <div class="col-6 text-center">
-            <span class="fw-light">
+            <span class="fw-light contratos-hechos">
               12
             </span>
           </div>
@@ -65,7 +65,7 @@
             </span>
           </div>
           <div class="col-6 text-center">
-            <span class="fw-light">
+            <span class="fw-light total-servicios">
               8
             </span>
           </div>
@@ -77,7 +77,7 @@
             </span>
           </div>
           <div class="col-6 text-center">
-            <span class="fw-light">
+            <span class="fw-light compra-servicios">
               12
             </span>
           </div>
