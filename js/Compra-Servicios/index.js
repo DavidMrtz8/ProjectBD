@@ -263,10 +263,39 @@ function EliminarCompraServicio(compraServicioID) {
   });
 }
 
+function llenarDatosExtras() {
+  const formData = new FormData();
+  formData.append("procedimiento", "spDatosServicios");
+  const ts = document.getElementById('tservicios');
+  const tc = document.getElementById('tcompras');
+
+  // Realizar la solicitud a PHP mediante Fetch API
+  fetch("./php/server/compra-servicios/apis_compra-servicios.php", {
+    method: "POST",
+    body: formData,
+  })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+      return response.json();
+    })
+    .then(data => {
+      console.log(data);
+      // Limpiar el contenido existente de la tabla
+      ts.innerHTML = data[0].ServiciosRealizados;
+      tc.innerHTML = data[0].TotalVentas + ' Lps';
+    })
+    .catch(error => {
+      console.error("Fetch error:", error);
+    });
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   cargarComboBoxServicios();
   cargarComboBoxTecnico();
   cargarComboBoxCliente();
+  llenarDatosExtras();
   LlenarTablaCompraServicios();
   const searchInput = document.getElementById("searchCliente");
   searchInput.addEventListener("input", cargarComboBoxCliente);

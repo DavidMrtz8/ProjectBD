@@ -10,14 +10,14 @@
             <h6 class="fs-5">
               <i class='bx bx-check-square'></i>
             </h6>
-            <span class="fw-bold mb-1">14</span>
+            <span class="fw-bold mb-1" id="tservicios"></span>
             <span class="subtitle-contratos">Servicios Realizados</span>
           </div>
           <div class="col-4 d-flex justify-content-center align-items-center flex-column border-end">
             <h6 class="fs-5">
               <i class='bx bx-basket'></i>
             </h6>
-            <span class="fw-bold mb-1">2500 Lps</span>
+            <span class="fw-bold mb-1" id="tcompras"></span>
             <span class="subtitle-contratos">Total Vendido</span>
           </div>
           <div class="col-4 d-flex justify-content-center align-items-center flex-column">

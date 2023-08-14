@@ -24,6 +24,25 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
   } else {
     $nombreProcedimiento = $_POST['procedimiento'];
 
+    if ($nombreProcedimiento === "spDatosServicios") {
+      $resultado = $conexion->ejecutarProcedimientosAlmacenado($nombreProcedimiento);
+
+      // Obtener los resultados del objeto de declaración
+      $data = [];
+      while ($row = sqlsrv_fetch_array($resultado, SQLSRV_FETCH_ASSOC)) {
+        $data[] = $row;
+      }
+
+      // Convertir los resultados a formato JSON
+      $resultadoJSON = json_encode($data);
+
+      // Establecer encabezados para indicar que la respuesta es en formato JSON
+      header('Content-Type: application/json');
+
+      // Imprimir el resultado en formato JSON
+      echo $resultadoJSON;
+    }
+
     if (isset($_GET['getComboDataServicios']) && $_GET['getComboDataServicios'] === 'true') {
       $sql = "select * from vServicios";
       $result = $conexion->query($sql);
