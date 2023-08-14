@@ -103,7 +103,42 @@ function LlenarTablaServicios() {
     });
 }
 
+function llenarDatosExtras() {
+  const formData = new FormData();
+  formData.append("procedimiento", "spDatosFacturas");
+  const fc = document.getElementById('tcontratos');
+  const fp = document.getElementById('tcpagados');
+
+  const ts = document.getElementById('tservicios');
+  const tp = document.getElementById('tspagados');
+
+  // Realizar la solicitud a PHP mediante Fetch API
+  fetch("./php/server/facturacion/apis_facturacion.php", {
+    method: "POST",
+    body: formData,
+  })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+      return response.json();
+    })
+    .then(data => {
+      console.log(data);
+      // Limpiar el contenido existente de la tabla
+      fc.innerHTML = data[0].FacturasContratos;
+      fp.innerHTML = data[0].FacturasContratosPagados;
+      ts.innerHTML = data[0].TotalServicios;
+      tp.innerHTML = data[0].TotalServiciosPagados;
+    })
+    .catch(error => {
+      console.error("Fetch error:", error);
+    });
+}
+
+
 document.addEventListener("DOMContentLoaded", () => {
   LlenarTablaFactura();
   LlenarTablaServicios();
+  llenarDatosExtras();
 });

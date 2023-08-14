@@ -10,15 +10,15 @@
             <h6 class="fs-5">
               <i class='bx bx-credit-card-front'></i>
             </h6>
-            <span class="fw-bold mb-1">14</span>
-            <span class="subtitle-contratos">Facturaciones</span>
+            <span class="fw-bold mb-1" id="tcontratos"></span>
+            <span class="subtitle-contratos">Facturas</span>
           </div>
           <div class="col-6 d-flex justify-content-center align-items-center flex-column border-end">
             <h6 class="fs-5">
               <i class='bx bxs-user-check'></i>
             </h6>
-            <span class="fw-bold mb-1">25</span>
-            <span class="subtitle-contratos">Total clientes</span>
+            <span class="fw-bold mb-1" id="tcpagados"></span>
+            <span class="subtitle-contratos">Total pagados</span>
           </div>
         </div>
       </div>
@@ -30,14 +30,14 @@
             <h6 class="fs-5">
               <i class='bx bx-credit-card-front'></i>
             </h6>
-            <span class="fw-bold mb-1">14</span>
-            <span class="subtitle-contratos">Facturaciones</span>
+            <span class="fw-bold mb-1" id="tservicios"></span>
+            <span class="subtitle-contratos">Facturas</span>
           </div>
           <div class="col-6 d-flex justify-content-center align-items-center flex-column border-end">
             <h6 class="fs-5">
               <i class='bx bxs-user-check'></i>
             </h6>
-            <span class="fw-bold mb-1">25</span>
+            <span class="fw-bold mb-1" id="tspagados"></span>
             <span class="subtitle-contratos">Total clientes</span>
           </div>
         </div>
