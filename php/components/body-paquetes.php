@@ -10,14 +10,14 @@
             <h6 class="fs-5">
               <i class='bx bx-briefcase'></i>
             </h6>
-            <span class="fw-bold mb-1">14</span>
+            <span class="fw-bold mb-1" id="tpaquetes"></span>
             <span class="subtitle-contratos">Total paquetes</span>
           </div>
           <div class="col-4 d-flex justify-content-center align-items-center flex-column border-end">
             <h6 class="fs-5">
               <i class='bx bx-phone-outgoing'></i>
             </h6>
-            <span class="fw-bold mb-1">25</span>
+            <span class="fw-bold mb-1" id="tvisitas"></span>
             <span class="subtitle-contratos">Total visitas</span>
           </div>
           <div class="col-4 d-flex justify-content-center align-items-center flex-column">

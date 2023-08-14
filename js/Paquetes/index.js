@@ -286,10 +286,39 @@ function EliminarContrato() {
   });
 }
 
+function llenarDatosExtras() {
+  const formData = new FormData();
+  formData.append("procedimiento", "spDatosContratos");
+  const tp = document.getElementById('tpaquetes');
+  const tv = document.getElementById('tvisitas');
+
+  // Realizar la solicitud a PHP mediante Fetch API
+  fetch("./php/server/paquetes/apis_paquetes.php", {
+    method: "POST",
+    body: formData,
+  })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+      return response.json();
+    })
+    .then(data => {
+      console.log(data);
+      // Limpiar el contenido existente de la tabla
+      tp.innerHTML = data[0].TotalPaquetes;
+      tv.innerHTML = data[0].TotalVisitas;
+    })
+    .catch(error => {
+      console.error("Fetch error:", error);
+    });
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   cargarComboBoxTecnico();
   cargarComboBoxPaquete();
   cargarComboBoxCliente();
+  llenarDatosExtras();
   LlenarTablaEstadoPaquetes();
   EliminarContrato();
   const searchInput = document.getElementById("searchCliente");
