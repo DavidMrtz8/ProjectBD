@@ -36,7 +36,7 @@ if ($nombreProcedimiento === "spActualizarTablaPaquetesDetalles") {
 // Cargar datos a los comboBox
 
 if (isset($_GET['getComboData']) && $_GET['getComboData'] === 'true') {
-  $sql = "select * from vServicios";
+  $sql = "select * from vMostrarServicios";
   $result = $conexion->query($sql);
 
   // Almacena los datos en un array

@@ -1,6 +1,6 @@
 <div class="container">
   <?php
-    include('header.php');
+  include('header.php');
   ?>
   <div class="row mt-3">
     <div class="col-8 p-2">
@@ -9,10 +9,11 @@
           <div class="row g-0">
             <div class="col-9 col-md-10">
               <div class="card-body px-4">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
-                  content. This content is a little bit longer.</p>
-                <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                <h5 class="card-title">¡Bienvenidos!</h5>
+                <p class="card-text">¡Bienvenido al Sistema de Gestión de Paquetes y Venta SAO-APP! Nuestra plataforma
+                  ha
+                  sido diseñada pensando en simplificar tus operaciones de gestión
+                  de paquetes y ventas, brindándote un control total y eficiente sobre cada aspecto de tu negocio.</p>
               </div>
             </div>
             <div class="col-3 col-md-2 d-flex">
@@ -28,9 +29,10 @@
           <div class="row g-0">
             <div class="col-md-12">
               <div class="card-body">
-                <h6 class="card-title fs-6 d-flex align-items-center"><i class='bx bx-line-chart me-2'></i>Card title
+                <h6 class="card-title fs-6 d-flex align-items-center"><i class='bx bx-line-chart me-4'></i>Paquete más
+                  vendido
                 </h6>
-                <p class="card-text">Body card</p>
+                <p class="card-text paquetesMasVendido">Body card</p>
               </div>
             </div>
           </div>
@@ -43,8 +45,9 @@
           <div class="row g-0">
             <div class="col-md-12">
               <div class="card-body">
-                <h6 class="card-title fs-6 d-flex align-items-center"><i class='bx bx-news me-2'></i>Card title</h6>
-                <p class="card-text">Body card</p>
+                <h6 class="card-title fs-6 d-flex align-items-center"><i class='bx bx-news me-4'></i>Servicio más
+                  vendido</h6>
+                <p class="card-text serviciosMasVendido">Body card</p>
               </div>
             </div>
           </div>
@@ -78,11 +81,11 @@
                   <thead>
                     <tr>
                       <th scope="col">#</th>
-                      <th scope="col">First</th>
-                      <th scope="col">Handle</th>
+                      <th scope="col">Factura</th>
+                      <th scope="col">Total</th>
                     </tr>
                   </thead>
-                  <tbody>
+                  <tbody class="facturasRealizadas">
                     <tr>
                       <th scope="row">1</th>
                       <td>Mark</td>
@@ -121,7 +124,7 @@
     <div class="col p-2">
       <div class="header col-12 bg-white rounded py-2 px-3 d-flex justify-content-center align-items-center">
         <footer class="footer text-center py-2">
-            <span>&copy; 2023 - Todos los derechos reservados foraneos</span>
+          <span>&copy; 2023 - Todos los derechos reservados foraneos</span>
         </footer>
       </div>
     </div>
