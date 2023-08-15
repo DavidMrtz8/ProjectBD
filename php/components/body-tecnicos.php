@@ -97,16 +97,13 @@
                 <div class="col-3 d-flex justify-content-center align-items-center">
                   <i class='bx bxs-chevron-right'></i>
                 </div>
-                <div class="col-5">
-                  <span class="d-block fw-semibold">
+                <div class="col-5 d-flex justify-content-left align-items-center">
+                  <span class="d-block fw-semibold tecnico-uno">
                     San Peter
-                  </span>
-                  <span class="d-block text-body-tertiary">
-                    Tegucigalpa
                   </span>
                 </div>
                 <div class="col-3 text-center">
-                  <span class="fw-semibold">3</span>
+                  <span class="fw-semibold contratosT1">3</span>
                   <span class="text-body-tertiary">Contratos</span>
                 </div>
               </div>
@@ -116,16 +113,13 @@
                 <div class="col-3 d-flex justify-content-center align-items-center">
                   <i class='bx bxs-chevron-right'></i>
                 </div>
-                <div class="col-5">
-                  <span class="d-block fw-semibold">
+                <div class="col-5 d-flex justify-content-left align-items-center">
+                  <span class="d-block fw-semibold tecnico-dos">
                     San Peter
-                  </span>
-                  <span class="d-block text-body-tertiary">
-                    Tegucigalpa
                   </span>
                 </div>
                 <div class="col-3 text-center">
-                  <span class="fw-semibold">3</span>
+                  <span class="fw-semibold contratosT2">3</span>
                   <span class="text-body-tertiary">Contratos</span>
                 </div>
               </div>
@@ -135,16 +129,13 @@
                 <div class="col-3 d-flex justify-content-center align-items-center">
                   <i class='bx bxs-chevron-right'></i>
                 </div>
-                <div class="col-5">
-                  <span class="d-block fw-semibold">
+                <div class="col-5 d-flex justify-content-left align-items-center">
+                  <span class="d-block fw-semibold tecnico-tres">
                     San Peter
-                  </span>
-                  <span class="d-block text-body-tertiary">
-                    Tegucigalpa
                   </span>
                 </div>
                 <div class="col-3 text-center">
-                  <span class="fw-semibold">3</span>
+                  <span class="fw-semibold contratosT3">3</span>
                   <span class="text-body-tertiary">Contratos</span>
                 </div>
               </div>
@@ -162,20 +153,17 @@
           </div>
           <div class="row">
             <div class="col-12">
-              <div class="d-flex gap-2 border border-light-subtle rounded shadow-sm p-1">
+              <div class="d-flex gap-2 border border-light-subtle rounded shadow-sm p-2">
                 <div class="col-3 d-flex justify-content-center align-items-center">
                   <i class='bx bxs-chevron-right'></i>
                 </div>
-                <div class="col-5">
-                  <span class="d-block fw-semibold">
+                <div class="col-5 d-flex justify-content-left align-items-center">
+                  <span class="d-block fw-semibold tecnico-cuatro">
                     San Peter
-                  </span>
-                  <span class="d-block text-body-tertiary">
-                    Tegucigalpa
                   </span>
                 </div>
                 <div class="col-3 text-center">
-                  <span class="fw-semibold">12</span>
+                  <span class="fw-semibold serviciosT4">12</span>
                   <span class="text-body-tertiary">servicios</span>
                 </div>
               </div>

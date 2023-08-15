@@ -268,10 +268,82 @@ function CargarDatosTotales() {
       return response.json();
     })
     .then(data => {
-      console.log(data);
       totalTecnicos.innerHTML = data[0].TotalTecnicos;
       tecnicosLibres.innerHTML = data[0].TotalTecnicosDisponibles;
       tecnicosOcupados.innerHTML = data[0].TotalTecnicosOcupados;
+    })
+    .catch(error => {
+      console.error("Fetch error:", error);
+    });
+}
+
+function CargarTecnicosInfoContratos() {
+  const tecnicoUnoNombre = document.querySelector(".tecnico-uno");
+  const tecnicoUnoContratos = document.querySelector(".contratosT1");
+  const tecnicoDosNombre = document.querySelector(".tecnico-dos");
+  const tecnicoDosContratos = document.querySelector(".contratosT2");
+  const tecnicoTresNombre = document.querySelector(".tecnico-tres");
+  const tecnicoTresContratos = document.querySelector(".contratosT3");
+  const tecnicoCuatroNombre = document.querySelector(".tecnico-cuatro");
+
+  const formData = new FormData();
+  formData.append("procedimiento", "vista");
+
+  fetch(
+    "./php/server/Tecnicos/apis_tecnicos.php?getTecnicosMasContratosServicios=true",
+    {
+      method: "POST",
+      body: formData,
+    }
+  )
+    .then(response => {
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+      return response.json();
+    })
+    .then(data => {
+      console.log(data);
+      tecnicoUnoNombre.innerHTML = data[0].Nombre;
+      tecnicoDosNombre.innerHTML = data[1].Nombre;
+      tecnicoTresNombre.innerHTML = data[2].Nombre;
+      tecnicoUnoContratos.innerHTML = data[0].Contratos;
+      tecnicoDosContratos.innerHTML = data[1].Contratos;
+      tecnicoTresContratos.innerHTML = data[2].Contratos;
+      // tecnicosLibres.innerHTML = data[0].TotalTecnicosDisponibles;
+      // tecnicosOcupados.innerHTML = data[0].TotalTecnicosOcupados;
+    })
+    .catch(error => {
+      console.error("Fetch error:", error);
+    });
+}
+
+function CargarTecnicosInfoServicios() {
+  const tecnicoCuatroNombre = document.querySelector(".tecnico-cuatro");
+  const tecnicoCuatroServicios = document.querySelector(".serviciosT4");
+
+  const formData = new FormData();
+  formData.append("procedimiento", "vista");
+
+  fetch(
+    "./php/server/Tecnicos/apis_tecnicos.php?getTecnicosMasServicios=true",
+    {
+      method: "POST",
+      body: formData,
+    }
+  )
+    .then(response => {
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+      return response.json();
+    })
+    .then(data => {
+      console.log(data);
+      tecnicoCuatroNombre.innerHTML = data[0].Nombre;
+      tecnicoCuatroServicios.innerHTML = data[0].Servicios;
+      // tecnicosLibres.innerHTML = data[0].TotalTecnicosDisponibles;
+      // tecnicosOcupados.innerHTML = data[0].TotalTecnicosOcupados;
     })
     .catch(error => {
       console.error("Fetch error:", error);
@@ -283,4 +355,6 @@ document.addEventListener("DOMContentLoaded", () => {
   cargarComboBoxHorario();
   LlenarTabla();
   CargarDatosTotales();
+  CargarTecnicosInfoContratos();
+  CargarTecnicosInfoServicios();
 });

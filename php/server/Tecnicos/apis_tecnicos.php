@@ -191,6 +191,39 @@ if ($requestData !== null) {
     echo $jsonData;
   }
 
+  if (isset($_GET['getTecnicosMasContratosServicios']) && $_GET['getTecnicosMasContratosServicios'] === 'true') {
+    $sql = "select * from vTecnicosMasContratos";
+    $result = $conexion->query($sql);
+
+    // Almacena los datos en un array
+    $data = array();
+    while ($row = sqlsrv_fetch_array($result, SQLSRV_FETCH_ASSOC)) {
+      $data[] = $row;
+    }
+
+    // Convierte los datos a formato JSON
+    $jsonData = json_encode($data);
+
+    // Devuelve los datos JSON
+    echo $jsonData;
+  }
+  if (isset($_GET['getTecnicosMasServicios']) && $_GET['getTecnicosMasServicios'] === 'true') {
+    $sql = "select * from vTecnicosMasServicios";
+    $result = $conexion->query($sql);
+
+    // Almacena los datos en un array
+    $data = array();
+    while ($row = sqlsrv_fetch_array($result, SQLSRV_FETCH_ASSOC)) {
+      $data[] = $row;
+    }
+
+    // Convierte los datos a formato JSON
+    $jsonData = json_encode($data);
+
+    // Devuelve los datos JSON
+    echo $jsonData;
+  }
+
   if ($nombreProcedimiento === "spMostrarTotalTecnicos") {
     $resultado = $conexion->ejecutarProcedimientosAlmacenado($nombreProcedimiento);
 
