@@ -48,7 +48,6 @@ function ServicioMasVendido() {
       return response.json();
     })
     .then(data => {
-      console.log(data);
       servicioMasVendido.innerHTML = data[0].Nombre;
     })
     .catch(error => {
