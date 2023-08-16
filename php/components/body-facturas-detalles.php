@@ -9,9 +9,7 @@
           <div class="col-8 px-5 py-4">
             <span class="fw-semibold fs-5">SAO-APP</span>
           </div>
-          <div class="col-4 px-5 py-4">
-            <span class="px-4 fw-semibold text-warning">Estado: Pendiente</span>
-            <button class="btn btn-success px-4">Pagar</button>
+          <div class="col-4 px-5 py-4" id="apartado-estado">
           </div>
         </div>
         <div class="row mt-2">
@@ -27,8 +25,8 @@
                 <span>Fecha de vencimiento: 12 de agosto</span>
                 <span>Factura para: SAO INC</span>
                 <span>Calle Principal, Barrio El Centro
-                San Pedro Sula, Cortés
-                Honduras</span>
+                  San Pedro Sula, Cortés
+                  Honduras</span>
               </div>
             </div>
           </div>
@@ -52,7 +50,7 @@
           <div class="col p-1">
             <div class="header col-12 bg-white rounded py-1 px-3 d-flex justify-content-center align-items-center">
               <footer class="footer text-center py-2">
-                  <span>&copy; 2023 - Todos los derechos reservados foraneos team</span>
+                <span>&copy; 2023 - Todos los derechos reservados foraneos team</span>
               </footer>
             </div>
           </div>
@@ -63,7 +61,7 @@
 </div>
 
 <script>
-    document.querySelector('[data-target="#productosUsados"]').addEventListener('click', function () {
-        document.querySelector('#productosUsados').classList.toggle('show');
-    });
+  document.querySelector('[data-target="#productosUsados"]').addEventListener('click', function () {
+    document.querySelector('#productosUsados').classList.toggle('show');
+  });
 </script>

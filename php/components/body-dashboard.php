@@ -76,7 +76,7 @@
           <div class="row g-0">
             <div class="col-md-12">
               <div class="card-body">
-                <h5 class="card-title">Ejemplo tabla</h5>
+                <h5 class="card-title table-scroll">Ejemplo tabla</h5>
                 <table class="table">
                   <thead>
                     <tr>

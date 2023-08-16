@@ -1,32 +1,45 @@
-function LlenarDetalles(){
-    const tableBody = document.querySelector(".tbody-facdetalles");
-    const formData = new FormData();
+function LlenarDetalles() {
+  const tableBody = document.querySelector(".tbody-facdetalles");
+  const formData = new FormData();
 
-    const clnombre = document.getElementById('clNombre')
-    const cldireccion = document.getElementById('clDireccion')
+  const clnombre = document.getElementById("clNombre");
+  const cldireccion = document.getElementById("clDireccion");
 
-    const urlParams = new URLSearchParams(window.location.search);
-    const facturaID = urlParams.get("facturaID");
+  const apartadoEstado = document.getElementById("apartado-estado");
 
-    formData.append("facturaID", facturaID);
-    formData.append("procedimiento", "spFacuraDetalles");
-    // Realizar la solicitud a PHP mediante Fetch API
-    fetch("./php/server/facturacion/apis_facturacion.php", {
-        method: "POST",
-        body: formData,
-    })
+  const urlParams = new URLSearchParams(window.location.search);
+  const facturaID = urlParams.get("facturaID");
+
+  formData.append("facturaID", facturaID);
+  formData.append("procedimiento", "spFacuraDetalles");
+  // Realizar la solicitud a PHP mediante Fetch API
+  fetch("./php/server/facturacion/apis_facturacion.php", {
+    method: "POST",
+    body: formData,
+  })
     .then(response => {
-        if (!response.ok) {
-            throw new Error("Network response was not ok");
-        }
-        return response.json();
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+      return response.json();
     })
     .then(data => {
-        // Limpiar el contenido existente de la tabla
-        console.log(data)
-        clnombre.innerHTML = data[0].Cliente;
-        cldireccion.innerHTML = data[0].Direccion;
-        tableBody.innerHTML = `
+      // Limpiar el contenido existente de la tabla
+      console.log(data);
+      if (data[0].Estado == 1) {
+        apartadoEstado.innerHTML = `
+          <span class="px-4 fw-semibold text-success">Estado: Pagado</span>
+          <button class="btn btn-secondary px-4">Desabilitado</button> 
+        `;
+      } else if (data[0].Estado == 0) {
+        apartadoEstado.innerHTML = `
+          <span class="px-4 fw-semibold text-warning">Estado: Pendiente</span>
+          <button class="btn btn-success px-4" onclick="pagarFacurtura(${facturaID})">Pagar</button> 
+        `;
+      }
+      clnombre.innerHTML = data[0].Cliente;
+      cldireccion.innerHTML = data[0].Direccion;
+      tableBody.innerHTML = `
             <tr>
                 <td>${data[0].Paquete}</td>
                 <td>${data[0].TotalPaquetesPreciosISV} Lps</td>
@@ -45,12 +58,18 @@ function LlenarDetalles(){
             <tr>
                 <td colspan="1"></td>
                 <td>SubTotal:</td>
-                <td>${data[0].TotalPaquetesPrecios+data[0].HoraExtraValor+data[0].TotalArticulos} Lps</td>
+                <td>${
+                  data[0].TotalPaquetesPrecios +
+                  data[0].HoraExtraValor +
+                  data[0].TotalArticulos
+                } Lps</td>
                 </tr>
             <tr>
                 <td colspan="1"></td>
                 <td>ISV:</td>
-                <td>${data[0].TotalPaquetesPreciosISV+data[0].totalArticulosISV} Lps</td>
+                <td>${
+                  data[0].TotalPaquetesPreciosISV + data[0].totalArticulosISV
+                } Lps</td>
             </tr>
             <tr>
                 <td colspan="1"  class="bg-warning-subtle"></td>
@@ -60,39 +79,52 @@ function LlenarDetalles(){
         `;
     })
     .catch(error => {
-        console.error("Fetch error:", error);
+      console.error("Fetch error:", error);
     });
 }
 
-function LlenarDetallesServicios(){
-    const tableBody = document.querySelector(".tbody-facdetalles");
-    const formData = new FormData();
+function LlenarDetallesServicios() {
+  const tableBody = document.querySelector(".tbody-facdetalles");
+  const formData = new FormData();
 
-    const clnombre = document.getElementById('clNombre')
-    const cldireccion = document.getElementById('clDireccion')
+  const clnombre = document.getElementById("clNombre");
+  const cldireccion = document.getElementById("clDireccion");
 
-    const urlParams = new URLSearchParams(window.location.search);
-    const compraID = urlParams.get("compraID");
+  const apartadoEstado = document.getElementById("apartado-estado");
 
-    formData.append("compraID", compraID);
-    formData.append("procedimiento", "spMostrarFunServicioDetallesFactura");
-    // Realizar la solicitud a PHP mediante Fetch API
-    fetch("./php/server/facturacion/apis_facturacion.php", {
-        method: "POST",
-        body: formData,
-    })
+  const urlParams = new URLSearchParams(window.location.search);
+  const compraID = urlParams.get("compraID");
+
+  formData.append("compraID", compraID);
+  formData.append("procedimiento", "spMostrarFunServicioDetallesFactura");
+  // Realizar la solicitud a PHP mediante Fetch API
+  fetch("./php/server/facturacion/apis_facturacion.php", {
+    method: "POST",
+    body: formData,
+  })
     .then(response => {
-        if (!response.ok) {
-            throw new Error("Network response was not ok");
-        }
-        return response.json();
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+      return response.json();
     })
     .then(data => {
-        // Limpiar el contenido existente de la tabla
-        console.log(data)
-        clnombre.innerHTML = data[0].Cliente;
-        cldireccion.innerHTML = data[0].Direccion;
-        tableBody.innerHTML = `
+      // Limpiar el contenido existente de la tabla
+      console.log(data);
+      if (data[0].Estado == 1) {
+        apartadoEstado.innerHTML = `
+          <span class="px-4 fw-semibold text-success">Estado: Pagado</span>
+          <button class="btn btn-secondary px-4">Desabilitado</button> 
+        `;
+      } else if (data[0].Estado == 0) {
+        apartadoEstado.innerHTML = `
+          <span class="px-4 fw-semibold text-warning">Estado: Pendiente</span>
+          <button class="btn btn-success px-4" onclick="pagarFacturaServicios(${compraID})">Pagar</button> 
+        `;
+      }
+      clnombre.innerHTML = data[0].Cliente;
+      cldireccion.innerHTML = data[0].Direccion;
+      tableBody.innerHTML = `
             <tr>
                 <td>${data[0].Servicio}</td>
                 <td>${data[0].PrecioServicioISV} Lps</td>
@@ -106,12 +138,14 @@ function LlenarDetallesServicios(){
             <tr>
                 <td colspan="1"></td>
                 <td>SubTotal:</td>
-                <td>${data[0].PrecioServicio+data[0].TotalArticulos} Lps</td>
+                <td>${data[0].PrecioServicio + data[0].TotalArticulos} Lps</td>
                 </tr>
             <tr>
                 <td colspan="1"></td>
                 <td>ISV:</td>
-                <td>${data[0].PrecioServicioISV+data[0].TotalArticulosISV} Lps</td>
+                <td>${
+                  data[0].PrecioServicioISV + data[0].TotalArticulosISV
+                } Lps</td>
             </tr>
             <tr>
                 <td colspan="1"  class="bg-warning-subtle"></td>
@@ -121,25 +155,57 @@ function LlenarDetallesServicios(){
         `;
     })
     .catch(error => {
-        console.error("Fetch error:", error);
+      console.error("Fetch error:", error);
     });
 }
 
+function pagarFacurtura(facturaID) {
+  const formData = new FormData();
+  const urlParams1 = new URLSearchParams(window.location.search);
+  const fa = urlParams1.get("facturaID");
+
+  formData.append("facturaID", fa);
+  formData.append("procedimiento", "spPagarFactura");
+  // Realizar la solicitud a PHP mediante Fetch API
+  fetch("./php/server/facturacion/apis_facturacion.php", {
+    method: "POST",
+    body: formData,
+  })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+      return response.json();
+    })
+    .then(data => {
+      // Limpiar el contenido existente de la tabla
+      console.log(data);
+      console.log("Factura ha sido pagada");
+      LlenarDetalles();
+    })
+    .catch(error => {
+      console.error("Fetch error:", error);
+    });
+}
+
+function pagarFacturaServicios(facturaID) {
+  /* En contrucion */
+}
 
 document.addEventListener("DOMContentLoaded", () => {
-    const urlParams = new URLSearchParams(window.location.search);
+  const urlParams = new URLSearchParams(window.location.search);
 
-    // Obtener los valores de los parámetros
-    const facturaID = urlParams.get("facturaID");
-    const compraID = urlParams.get("compraID");
+  // Obtener los valores de los parámetros
+  const facturaID = urlParams.get("facturaID");
+  const compraID = urlParams.get("compraID");
 
-    // Verificar y realizar acciones basadas en los parámetros
-    if (facturaID !== null) {
-        LlenarDetalles();
-    } else if (compraID !== null) {
-        LlenarDetallesServicios()
-    } else {
-        // No se encontraron parámetros válidos en la URL
-        console.log("No se encontraron parámetros válidos en la URL.");
-    }
+  // Verificar y realizar acciones basadas en los parámetros
+  if (facturaID !== null) {
+    LlenarDetalles();
+  } else if (compraID !== null) {
+    LlenarDetallesServicios();
+  } else {
+    // No se encontraron parámetros válidos en la URL
+    console.log("No se encontraron parámetros válidos en la URL.");
+  }
 });
