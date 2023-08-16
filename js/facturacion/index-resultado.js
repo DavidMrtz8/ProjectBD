@@ -161,10 +161,7 @@ function LlenarDetallesServicios() {
 
 function pagarFacurtura(facturaID) {
   const formData = new FormData();
-  const urlParams1 = new URLSearchParams(window.location.search);
-  const fa = urlParams1.get("facturaID");
-
-  formData.append("facturaID", fa);
+  formData.append("facturaID", facturaID);
   formData.append("procedimiento", "spPagarFactura");
   // Realizar la solicitud a PHP mediante Fetch API
   fetch("./php/server/facturacion/apis_facturacion.php", {
@@ -188,8 +185,30 @@ function pagarFacurtura(facturaID) {
     });
 }
 
-function pagarFacturaServicios(facturaID) {
-  /* En contrucion */
+function pagarFacturaServicios(compraID) {
+  const formData = new FormData();
+  formData.append("compraID", compraID);
+  formData.append("procedimiento", "spPagarFacturaServicios");
+  // Realizar la solicitud a PHP mediante Fetch API
+  fetch("./php/server/facturacion/apis_facturacion.php", {
+    method: "POST",
+    body: formData,
+  })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+      return response.json();
+    })
+    .then(data => {
+      // Limpiar el contenido existente de la tabla
+      console.log(data);
+      console.log("Factura ha sido pagada");
+      LlenarDetallesServicios();
+    })
+    .catch(error => {
+      console.error("Fetch error:", error);
+    });
 }
 
 document.addEventListener("DOMContentLoaded", () => {
