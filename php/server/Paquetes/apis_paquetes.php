@@ -189,6 +189,25 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
       echo json_encode($response);
     }
 
+    if ($nombreProcedimiento === "spEstadoDeContratosCuantitativos") {
+      $resultado = $conexion->ejecutarProcedimientosAlmacenado($nombreProcedimiento);
+
+      // Obtener los resultados del objeto de declaración
+      $data = [];
+      while ($row = sqlsrv_fetch_array($resultado, SQLSRV_FETCH_ASSOC)) {
+        $data[] = $row;
+      }
+
+      // Convertir los resultados a formato JSON
+      $resultadoJSON = json_encode($data);
+
+      // Establecer encabezados para indicar que la respuesta es en formato JSON
+      header('Content-Type: application/json');
+
+      // Imprimir el resultado en formato JSON
+      echo $resultadoJSON;
+    }
+
     if ($nombreProcedimiento === "spMostrarContratoDetalles") {
       $contratoID = $_POST['contratoID'];
       $resultado = $conexion->ejecutarProcedimientosAlmacenado($nombreProcedimiento, [$contratoID]);

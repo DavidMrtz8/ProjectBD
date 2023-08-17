@@ -49,16 +49,10 @@
       <div class="container header bg-white rounded p-2 shadow-sm">
         <div class="row px-4 pt-4 pb-2">
           <div class="col">
-            <span class="fw-semibold">Facturacion de paquetes</span>
+            <span class="fw-semibold">Facturación de paquetes</span>
           </div>
           <div class="col">
-            <div class="input-group input-group-sm">
-              <input type="text" class="form-control" aria-label="Sizing example input"
-                aria-describedby="inputGroup-sizing-sm">
-              <button type="button" class="btn btn-secondary">
-                <i class='bx bx-search'></i>
-              </button>
-            </div>
+
           </div>
         </div>
         <div class="row p-4">
@@ -84,16 +78,9 @@
       <div class="container header bg-white rounded p-2 shadow-sm">
         <div class="row px-4 pt-4 pb-2">
           <div class="col">
-            <span class="fw-semibold">Facturacion de servicios</span>
+            <span class="fw-semibold">Facturación de servicios</span>
           </div>
           <div class="col">
-            <div class="input-group input-group-sm">
-              <input type="text" class="form-control" aria-label="Sizing example input"
-                aria-describedby="inputGroup-sizing-sm">
-              <button type="button" class="btn btn-secondary">
-                <i class='bx bx-search'></i>
-              </button>
-            </div>
           </div>
         </div>
         <div class="row p-4">

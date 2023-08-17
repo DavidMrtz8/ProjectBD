@@ -88,6 +88,7 @@
                   <th scope="col">Articulo</th>
                   <th scope="col">Cantidad</th>
                   <th scope="col">Precio</th>
+                  <th scope="col">Total</th>
                   <th scope="col">Accion</th>
                 </tr>
               </thead>

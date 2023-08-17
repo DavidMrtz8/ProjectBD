@@ -32,7 +32,7 @@
                 <h6 class="card-title fs-6 d-flex align-items-center"><i class='bx bx-line-chart me-4'></i>Paquete más
                   vendido
                 </h6>
-                <p class="card-text paquetesMasVendido">Body card</p>
+                <p class="card-text paquetesMasVendido mt-4">Body card</p>
               </div>
             </div>
           </div>
@@ -47,7 +47,7 @@
               <div class="card-body">
                 <h6 class="card-title fs-6 d-flex align-items-center"><i class='bx bx-news me-4'></i>Servicio más
                   vendido</h6>
-                <p class="card-text serviciosMasVendido">Body card</p>
+                <p class="card-text serviciosMasVendido mt-4">Body card</p>
               </div>
             </div>
           </div>
@@ -62,7 +62,7 @@
           <div class="row g-0">
             <div class="col-md-12">
               <div class="card-body">
-                <h5 class="card-title">Ejemplo grafico</h5>
+                <h5 class="card-title">Información general</h5>
                 <canvas id="miGrafico" style="max-height: 15rem;"></canvas>
               </div>
             </div>
@@ -76,7 +76,7 @@
           <div class="row g-0">
             <div class="col-md-12">
               <div class="card-body">
-                <h5 class="card-title table-scroll">Ejemplo tabla</h5>
+                <h5 class="card-title table-scroll">Tabla de últimas facturas</h5>
                 <table class="table">
                   <thead>
                     <tr>

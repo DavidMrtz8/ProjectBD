@@ -4,13 +4,13 @@
   ?>
   <div class="row mt-3">
     <div class="col-12 p-2">
-      <div class="col bg-white rounded p-4 overflow-auto table-scroll"  >
+      <div class="col bg-white rounded p-4 overflow-auto table-scroll">
         <div class="container">
           <div class="row mt-3">
             <div class="col-6">
               <span class="fw-bold fs-4">Inventario</span>
             </div>
-            <div class="col-3">
+            <div class="col-6">
               <div class="input-group mb-3">
                 <button class="btn d-flex w-100 gap-2 align-items-center justify-content-center agregar-paquete"
                   data-bs-toggle="modal" data-bs-target="#exampleModal">
@@ -20,13 +20,6 @@
               </div>
             </div>
             <div class="col-3">
-              <div class="input-group mb-3">
-                <input type="text" class="form-control" placeholder="Buscar articulo" aria-label="Recipient's username"
-                  aria-describedby="button-addon2">
-                <button class="btn btn-outline-secondary" type="button" id="button-addon2">
-                  <i class='bx bx-search'></i>
-                </button>
-              </div>
             </div>
           </div>
           <div class="row mt-3">

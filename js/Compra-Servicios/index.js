@@ -266,8 +266,8 @@ function EliminarCompraServicio(compraServicioID) {
 function llenarDatosExtras() {
   const formData = new FormData();
   formData.append("procedimiento", "spDatosServicios");
-  const ts = document.getElementById('tservicios');
-  const tc = document.getElementById('tcompras');
+  const ts = document.getElementById("tservicios");
+  const tc = document.getElementById("tcompras");
 
   // Realizar la solicitud a PHP mediante Fetch API
   fetch("./php/server/compra-servicios/apis_compra-servicios.php", {
@@ -284,7 +284,7 @@ function llenarDatosExtras() {
       console.log(data);
       // Limpiar el contenido existente de la tabla
       ts.innerHTML = data[0].ServiciosRealizados;
-      tc.innerHTML = data[0].TotalVentas + ' Lps';
+      tc.innerHTML = data[0].TotalVentas + " Lps";
     })
     .catch(error => {
       console.error("Fetch error:", error);

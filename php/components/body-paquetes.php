@@ -54,16 +54,16 @@
           <div class="row">
             <div class="col-12 d-flex justify-content-between">
               <div class="d-flex justify-content-center flex-column align-items-center">
-                <span class="fw-bold">180</span>
-                <span class="text-secondary">Completos</span>
+                <span class="fw-bold paquetesFinalizados">180</span>
+                <span class="text-secondary">Finalizados</span>
               </div>
               <div class="d-flex justify-content-center flex-column align-items-center">
-                <span class="fw-bold">180</span>
-                <span class="text-secondary">Completos</span>
+                <span class="fw-bold paquetesEnProgreso">180</span>
+                <span class="text-secondary">En progreso</span>
               </div>
               <div class="d-flex justify-content-center flex-column align-items-center">
-                <span class="fw-bold fs-6">180</span>
-                <span class="text-secondary">Completos</span>
+                <span class="fw-bold fs-6 paquetesCancelados">180</span>
+                <span class="text-secondary">Cancelados</span>
               </div>
             </div>
           </div>
@@ -80,13 +80,6 @@
               </span>
             </div>
             <div class="col-8 d-flex">
-              <div class="input-group input-group-sm">
-                <input type="text" class="form-control" aria-label="Sizing example input"
-                  aria-describedby="inputGroup-sizing-sm">
-                <button type="button" class="btn btn-secondary">
-                  <i class='bx bx-search'></i>
-                </button>
-              </div>
             </div>
           </div>
           <div class="row">

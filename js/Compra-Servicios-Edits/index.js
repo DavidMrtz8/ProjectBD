@@ -334,6 +334,7 @@ function LlenarTablaArticulos() {
           <td class="py-3">${item.Articulo}</td>
           <td class="py-3">${item.Cantidad}</td>
           <td class="py-3">${item.Precio}</td>
+          <td class="py-3">${item.Total}</td>
           <td class="py-3">
             <button class="btn btn-danger btn-sm eliminar-btn" data-id="${item.ArticuloID}" onclick="EliminarArticulo(${item.ArticuloID})">
               <i class="bx bx-eraser"></i>

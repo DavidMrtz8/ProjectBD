@@ -48,13 +48,7 @@
               </span>
             </div>
             <div class="col-8 d-flex">
-              <div class="input-group input-group-sm">
-                <input type="text" class="form-control" aria-label="Sizing example input"
-                  aria-describedby="inputGroup-sizing-sm">
-                <button type="button" class="btn btn-secondary">
-                  <i class='bx bx-search'></i>
-                </button>
-              </div>
+
             </div>
           </div>
           <div class="row">
