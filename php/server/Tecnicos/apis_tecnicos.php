@@ -104,6 +104,26 @@ if ($requestData !== null) {
     echo $resultadoJSON;
   }
 
+  if ($nombreProcedimiento === "spMostrarServiciosXTecnicos") {
+    $tecnicoID = $_POST['tecnicoID'];
+    $resultado = $conexion->ejecutarProcedimientosAlmacenado($nombreProcedimiento, [$tecnicoID]);
+
+    // Obtener los resultados del objeto de declaración
+    $data = [];
+    while ($row = sqlsrv_fetch_array($resultado, SQLSRV_FETCH_ASSOC)) {
+      $data[] = $row;
+    }
+
+    // Convertir los resultados a formato JSON
+    $resultadoJSON = json_encode($data);
+
+    // Establecer encabezados para indicar que la respuesta es en formato JSON
+    header('Content-Type: application/json');
+
+    // Imprimir el resultado en formato JSON
+    echo $resultadoJSON;
+  }
+
   if ($nombreProcedimiento === "spMostrarVisitaXtecnicoContrato") {
     $contratoID = $_POST['contratoID'];
     $tecnicoID = $_POST['tecnicoID'];

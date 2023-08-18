@@ -204,7 +204,7 @@
           <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">Nombre</label>
             <input type="text" class="form-control form-control-sm servicio-nombre" name="nombre"
-              id="exampleFormControlInput1" placeholder="Perez">
+              id="exampleFormControlInput1" placeholder="Ej. Reparación de celulares">
           </div>
           <div class="mb-3">
             <label for="exampleFormControlTextarea1" class="form-label">Descripcion</label>

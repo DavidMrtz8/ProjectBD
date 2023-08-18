@@ -58,7 +58,7 @@
       <div class="modal-body">
         <div class="mb-3">
           <label for="nombreArticulo" class="form-label">Nombre del Articulo</label>
-          <input type="text" class="form-control form-control-sm" id="nombreArticulo" placeholder="Memoria RAM">
+          <input type="text" class="form-control form-control-sm" id="nombreArticulo" placeholder="Ej. Memoria RAM">
         </div>
         <div class="mb-3">
           <label for="tipoDeArticulo" class="form-label">Tipo de articulo</label>

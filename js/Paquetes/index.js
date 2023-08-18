@@ -45,6 +45,7 @@ function enviarFormularioNuevoPaquete() {
         showConfirmButton: false,
         timer: 1500, // Tiempo en milisegundos
       });
+      location.reload();
     })
     .catch(error => {
       console.error("Error:", error);
@@ -289,8 +290,8 @@ function EliminarContrato() {
 function llenarDatosExtras() {
   const formData = new FormData();
   formData.append("procedimiento", "spDatosContratos");
-  const tp = document.getElementById('tpaquetes');
-  const tv = document.getElementById('tvisitas');
+  const tp = document.getElementById("tpaquetes");
+  const tv = document.getElementById("tvisitas");
 
   // Realizar la solicitud a PHP mediante Fetch API
   fetch("./php/server/paquetes/apis_paquetes.php", {
